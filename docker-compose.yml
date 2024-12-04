@@ -1,9 +1,0 @@
-services:
-  firebird:
-    image: jacobalberty/firebird:v4.0
-    environment:
-      FIREBIRD_DATABASE: 'database.fdb'
-      ISC_PASSWORD: 'masterkey'
-      EnableLegacyClientAuth: 'true'
-    ports:
-      - "3051:3050"
