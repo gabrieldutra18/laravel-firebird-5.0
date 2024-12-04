@@ -169,4 +169,16 @@ class FirebirdGrammar extends Grammar
             'as aggregate', 'as "aggregate"', parent::compileAggregate($query, $aggregate)
         );
     }
+    
+    /**
+     * Compile an update statement into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $values
+     * @return string
+     */
+    public function compileUpdate(Builder $query, array $values)
+    {
+        return parent::compileUpdate($query, $values) . ' SKIP LOCKED';
+    }
 }
